@@ -14,4 +14,12 @@
  <rect width="300" height="250" rx="24" fill="#e4f4fc"/>
  <path d="M40 205h220v-95l-42-24-38 24-44-30-42 30-54-34z" fill="url(#blue)" opacity=".9"/>
  <rect x="55" y="135" width="28" height="70" rx="4" fill="#fff"/><rect x="100" y="130" width="28" height="75" rx="4" fill="#fff"/><rect x="188" y="128" width="28" height="77" rx="4" fill="#fff"/>
- <circle cx="95" cy="55" r="30" fill="url(#gold)"/><path d="M83 6¶»§q«^
+ <circle cx="95" cy="55" r="30" fill="url(#gold)"/><path d="M83 62c18-10 18-25 28-30" stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round"/>
+</g>
+<g transform="translate(505 255)">
+ <rect width="505" height="240" rx="24" fill="#f6fbff"/>
+ <g transform="translate(38 42)"><circle cx="80" cy="75" r="64" fill="#cceafa"/><circle cx="80" cy="75" r="34" fill="#fff"/><path d="M80 12v24M80 114v24M17 75h24M119 75h24M36 31l17 17M107 102l17 17M124 31l-17 17M53 102l-17 17" stroke="#1683bd" stroke-width="12" stroke-linecap="round"/></g>
+ <g transform="translate(220 52)"><rect x="0" y="70" width="220" height="62" rx="18" fill="url(#blue)"/><rect x="40" y="20" width="100" height="70" rx="16" fill="#fff" stroke="#a9d8ee" stroke-width="8"/><circle cx="175" cy="102" r="30" fill="url(#gold)"/></g>
+</g>
+
+</svg>

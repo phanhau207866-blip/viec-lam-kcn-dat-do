@@ -24,4 +24,16 @@ export async function POST(req: Request) {
       full_name: fullName, phone,
       birth_year: body.birth_year ? Number(body.birth_year) : null,
       gender: body.gender ? String(body.gender) : null,
-      area: body.area ? String(body.are���q�^
+      area: body.area ? String(body.area).trim() : null,
+      company, available_date: availableDate,
+      note: body.note ? String(body.note).trim() : null,
+      status: "Chưa gọi", hr_note: null
+    };
+    const { error } = await supabase.from("applications").insert(payload);
+    if (error) {
+      if (error.code === "23505") return NextResponse.json({ error: "Số điện thoại này đã ứng tuyển công ty này rồi. HR sẽ liên hệ lại nếu cần." }, { status: 409 });
+      return NextResponse.json({ error: error.message }, { status: 500 });
+    }
+    return NextResponse.json({ ok: true, company });
+  } catch { return NextResponse.json({ error: "Không xử lý được yêu cầu." }, { status: 500 }); }
+}

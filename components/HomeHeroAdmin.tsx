@@ -33,4 +33,23 @@ export function HomeHeroAdmin(){
     const ext=(file.name.split(".").pop()||"jpg").toLowerCase().replace(/[^a-z0-9]/g,"");
     const path=`site/hero-${Date.now()}.${ext}`;
     const {error}=await s.storage.from("job-media").upload(path,file,{cacheControl:"3600",upsert:false,contentType:file.type});
-    if(error){setMsg(`Lỗi upload: ${erro���q�^
+    if(error){setMsg(`Lỗi upload: ${error.message}`);setUploading(false);return;}
+    const {data}=s.storage.from("job-media").getPublicUrl(path);
+    await persist(data.publicUrl);
+    setUploading(false);
+  }
+
+  return <section className="hero-admin-panel">
+    <div className="hero-admin-copy">
+      <span className="eyebrow">TRANG CHỦ</span>
+      <h2>Ảnh bìa trang chủ</h2>
+      <p>Ảnh cũ đã được khôi phục. Sau này ní có thể đổi ảnh bìa tại đây mà không cần sửa code.</p>
+      <div className="hero-admin-actions">
+        <label className="upload-btn">{uploading?"Đang tải...":"Đổi ảnh bìa"}<input type="file" accept="image/*" disabled={uploading} onChange={e=>e.target.files?.[0]&&upload(e.target.files[0])}/></label>
+        <button className="btn soft" type="button" disabled={uploading} onClick={()=>persist(DEFAULT_HERO)}>Dùng lại ảnh cũ</button>
+      </div>
+      {msg&&<small className="hero-admin-msg">{msg}</small>}
+    </div>
+    <div className="hero-admin-preview"><img src={url} alt="Xem trước ảnh bìa"/></div>
+  </section>;
+}

@@ -37,4 +37,9 @@ on storage.objects for delete
 to authenticated
 using (bucket_id = 'job-media');
 
--- 4) Gắn lại 3 logo thật có sẵn���q�^
+-- 4) Gắn lại 3 logo thật có sẵn trong project cho dữ liệu cũ nếu logo_url đang trống.
+-- Đây là đường dẫn local, web vẫn hiển thị bình thường. Khi Admin upload logo mới,
+-- logo_url sẽ được thay bằng URL Supabase Storage.
+update public.jobs set logo_url = '/logos/dnp.png' where slug = 'dnp' and (logo_url is null or logo_url = '');
+update public.jobs set logo_url = '/logos/dongjin.png' where slug = 'dongjin' and (logo_url is null or logo_url = '');
+update public.jobs set logo_url = '/logos/hai-au.png' where slug = 'hai-au' and (logo_url is null or logo_url = '');

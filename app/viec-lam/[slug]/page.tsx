@@ -33,4 +33,24 @@ export default function JobPage() {
   return <>
     <Header/>
     <main className="container detail-page">
-      <Link href="/" className="back">ⶻ�q�^
+      <Link href="/" className="back">← Về trang chủ</Link>
+      <div className="detail-hero detail-hero-rich">
+        <div className="detail-hero-copy">
+          <JobLogo job={job}/>
+          <span className="badge">{job.badge}</span>
+          <h1>{job.company}</h1><h2>{job.title}</h2><p>📍 {job.location}</p>
+          <div className="meta-grid large"><span>👥 {job.gender}</span><span>🎂 {job.age}</span><span>🕒 {job.shifts}</span><span>📌 {job.hiring}</span></div>
+        </div>
+        <img className="detail-cover" src={job.image} alt={`Công nhân làm việc tại ${job.company}`} />
+      </div>
+      <div className="detail-columns">
+        <section className="detail-card"><h3>🧰 Mô tả công việc</h3><p>{job.summary}</p></section>
+        <section className="detail-card"><h3>💰 Lương & thu nhập</h3><ul>{job.pay.map(x=><li key={x}>{x}</li>)}</ul></section>
+        <section className="detail-card"><h3>🎁 Quyền lợi</h3><ul>{job.benefits.map(x=><li key={x}>{x}</li>)}</ul></section>
+        <section className="detail-card"><h3>✅ Yêu cầu</h3><ul>{job.requirements.map(x=><li key={x}>{x}</li>)}</ul></section>
+      </div>
+      <section className="contact-card"><div><strong>HR phụ trách: {job.contactName}</strong><span>{job.contactPhone}</span><small>Nhắn Zalo hoặc gọi trực tiếp đúng HR phụ trách dự án này.</small></div><div className="contact-actions"><Link className="btn primary" href={`/ung-tuyen?job=${job.slug}`}>Ứng tuyển ngay</Link><a className="btn zalo" href={`https://zalo.me/${job.contactPhone}`} target="_blank" rel="noreferrer">Nhắn Zalo {job.contactName}</a><a className="btn call" href={`tel:${job.contactPhone}`}>Gọi {job.contactName}</a></div></section>
+    </main>
+    <div className="mobile-bar"><Link href={`/ung-tuyen?job=${job.slug}`}>Ứng tuyển</Link><a href={`https://zalo.me/${job.contactPhone}`} target="_blank" rel="noreferrer">Zalo HR</a><a href={`tel:${job.contactPhone}`}>Gọi ngay</a></div>
+  </>;
+}

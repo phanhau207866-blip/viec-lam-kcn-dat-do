@@ -45,4 +45,32 @@ export function rowToJob(row: JobRow): Job {
     requirements: lines(row.requirements),
     contactName: row.hr_name || "HR",
     contactPhone: row.hr_zalo || row.hr_phone || "0868660068",
-    badge: row.is_urgent ? "Tuyển g���q�^
+    badge: row.is_urgent ? "Tuyển gấp" : "Đang tuyển",
+    summary: row.description || "Liên hệ HR để được tư vấn chi tiết công việc.",
+    image: row.image_url || "/media/hero-workers-clean.jpg",
+    logo: row.logo_url || ({ dnp: "/logos/dnp.png", dongjin: "/logos/dongjin.png", "hai-au": "/logos/hai-au.png" } as Record<string,string>)[row.slug]
+  };
+}
+
+export function jobToRow(job: Job): JobRow {
+  return {
+    company_name: job.company,
+    slug: job.slug,
+    location: job.location,
+    job_title: job.title,
+    salary: job.pay.join("\n"),
+    shift: job.shifts,
+    age_requirement: job.age,
+    gender_requirement: job.gender,
+    description: job.summary,
+    requirements: job.requirements.join("\n"),
+    benefits: job.benefits.join("\n"),
+    hr_name: job.contactName,
+    hr_phone: job.contactPhone,
+    hr_zalo: job.contactPhone,
+    image_url: job.image,
+    logo_url: job.logo || null,
+    is_active: true,
+    is_urgent: ["idc-fluid", "hai-au"].includes(job.slug)
+  };
+}
