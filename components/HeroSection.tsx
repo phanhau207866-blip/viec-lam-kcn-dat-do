@@ -1,0 +1,34 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { getSupabase } from "@/lib/supabase";
+
+const DEFAULT_HERO = "/media/hero-workers-clean.jpg";
+
+export function HeroSection(){
+  const [heroUrl,setHeroUrl]=useState(DEFAULT_HERO);
+
+  useEffect(()=>{
+    const s=getSupabase();
+    if(!s) return;
+    s.from("site_settings").select("hero_image_url").eq("id","home").maybeSingle()
+      .then(({data})=>{
+        if(data?.hero_image_url) setHeroUrl(data.hero_image_url);
+      });
+  },[]);
+
+  return <section className="hero-final">
+    <div className="hero-photo hero-photo-bg" style={{backgroundImage:`url(${heroUrl})`}} aria-label="Công nhân đang làm việc trong nhà máy" />
+    <div className="hero-overlay" />
+    <aside className="social-proof" aria-label="Thống kê minh họa">
+      <div><i className="dot green"/><strong>143</strong><span>Người đang truy cập</span></div>
+      <div><i className="dot blue"/><strong>268</strong><span>Người đang quan tâm</span></div>
+      <div><i className="dot red"/><strong>962</strong><span>Người đang theo dõi / nhận việc</span></div>
+      <small>Số liệu minh họa</small>
+    </aside>
+    <div className="wide-container hero-content">
+      <div className="hero-copy final-copy">
+        <span className="hero-pill">6 công ty đang tuyển</span>
+        <h1>tại KCN Đất Đỏ</h1>
+        <p className="hero-slogan">Tuyển dụng nhanh – Đi làm sớm – Thu nh���q�^
