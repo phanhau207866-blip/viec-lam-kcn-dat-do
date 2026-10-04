@@ -61,14 +61,6 @@ export function JobCard({ job }: { job: Job }) {
 
         <div className="salary-highlight">💰 {job.pay[0]}</div>
 
-        {job.slug === "dongjin" && (
-          <div className="hr-highlight">HR Kim Anh · 0334 677 276</div>
-        )}
-
-        {job.slug === "hai-au" && (
-          <div className="hr-highlight">HR Trang · 0939 296 153</div>
-        )}
-
         <Link className="btn primary full soft-primary" href={`/ung-tuyen?job=${job.slug}`}>
           Ứng tuyển ngay <span>→</span>
         </Link>
