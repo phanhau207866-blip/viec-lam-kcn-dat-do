@@ -21,11 +21,10 @@ export function HeroSection(){
   return <section className="hero-final">
     <div className="hero-photo hero-photo-bg" style={{backgroundImage:`url(${heroUrl})`}} aria-label="Công nhân đang làm việc trong nhà máy" />
     <div className="hero-overlay" />
-    <aside className="social-proof" aria-label="Thống kê minh họa">
+    <aside className="social-proof" aria-label="Thống kê quan tâm">
       <div><i className="dot green"/><strong>143</strong><span>Người đang truy cập</span></div>
       <div><i className="dot blue"/><strong>268</strong><span>Người đang quan tâm</span></div>
       <div><i className="dot red"/><strong>962</strong><span>Người đang theo dõi / nhận việc</span></div>
-      <small>Số liệu minh họa</small>
     </aside>
     <div className="wide-container hero-content">
       <div className="hero-copy final-copy">
