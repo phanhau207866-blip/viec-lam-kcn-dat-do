@@ -86,7 +86,7 @@ export default function Admin(){
   const hired=rows.filter(r=>r.status==="Nhận việc").length;
 
   return <><Header/><main className="container admin-page">
-    <div className="admin-head"><div><span className="eyebrow">SUPER ADMIN</span><h1>Quản lý ứng viên</h1><p className="admin-sub">Tìm nhanh, gọi/Zalo ngay, đổi trạng thái, ghi chú và xuất danh sách để làm việc hằng ngày.</p></div><div className="admin-head-actions"><Link className="btn primary" href="/admin/jobs">Quản lý tin tuyển dụng</Link><button className="btn soft" onClick={logout}>Đăng xuất</button></div></div>
+    <div className="admin-head"><div><span className="eyebrow">SUPER ADMIN</span><h1>Quản lý ứng viên</h1><p className="admin-sub">Tìm nhanh, gọi/Zalo ngay, đổi trạng thái, ghi chú và xuất danh sách để làm việc hằng ngày.</p></div><div className="admin-head-actions"><Link className="btn soft" href="/admin/analytics">📊 Thống kê truy cập</Link><Link className="btn primary" href="/admin/jobs">Quản lý tin tuyển dụng</Link><button className="btn soft" onClick={logout}>Đăng xuất</button></div></div>
 
     <div className="stats"><div><strong>{rows.length}</strong><span>Tổng ứng viên</span></div><div><strong>{todayCount}</strong><span>Hôm nay</span></div><div><strong>{uncalled}</strong><span>Chưa gọi</span></div><div><strong>{hired}</strong><span>Đã nhận việc</span></div></div>
 
