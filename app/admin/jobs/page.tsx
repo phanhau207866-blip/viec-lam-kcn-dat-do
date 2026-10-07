@@ -34,12 +34,22 @@ export default function JobsAdmin(){
     setAuth(true);
     const {data,error}=await s.from("jobs").select("*").order("created_at",{ascending:true});
     if(error) setMsg(`Lỗi tải tin: ${error.message}`);
-    const dbRows=(data||[]) as JobRow[];
+    let dbRows=(data||[]) as JobRow[];
     const dbSlugs=new Set(dbRows.map(r=>r.slug));
     const fallbackRows=fallbackJobs
       .filter(j=>!dbSlugs.has(j.slug))
       .map(j=>jobToRow(j));
-    setRows([...dbRows,...fallbackRows]);setLoading(false);
+
+    if(fallbackRows.length){
+      const {data:inserted,error:insertError}=await s.from("jobs").insert(fallbackRows).select("*");
+      if(!insertError && inserted?.length){
+        dbRows=[...dbRows,...(inserted as JobRow[])];
+      } else if(insertError) {
+        setMsg(`Chưa tự đồng bộ được tin mới: ${insertError.message}`);
+        dbRows=[...dbRows,...fallbackRows];
+      }
+    }
+    setRows(dbRows);setLoading(false);
   }
   useEffect(()=>{load();},[]);
 
