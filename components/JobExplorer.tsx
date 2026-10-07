@@ -17,7 +17,12 @@ export function JobExplorer() {
       const s = getSupabase();
       if (!s) return;
       const { data, error } = await s.from("jobs").select("*").eq("is_active", true).order("created_at", { ascending: true });
-      if (!error && data?.length) setAllJobs((data as JobRow[]).map(rowToJob));
+      if (!error && data?.length) {
+        const dbJobs = (data as JobRow[]).map(rowToJob);
+        const dbSlugs = new Set(dbJobs.map(j => j.slug));
+        const missingFallbackJobs = fallbackJobs.filter(j => !dbSlugs.has(j.slug));
+        setAllJobs([...dbJobs, ...missingFallbackJobs]);
+      }
     })();
   }, []);
 
