@@ -28,7 +28,7 @@ export function HeroSection(){
     </aside>
     <div className="wide-container hero-content">
       <div className="hero-copy final-copy">
-        <span className="hero-pill">6 công ty đang tuyển</span>
+        <span className="hero-pill">7 công ty đang tuyển</span>
         <h1>tại KCN Đất Đỏ</h1>
         <p className="hero-slogan">Tuyển dụng nhanh – Đi làm sớm – Thu nhập ổn định</p>
         <div className="hero-checks"><span>✓ Nhiều vị trí</span><span>✓ Không cần kinh nghiệm</span><span>✓ Nam / Nữ đều được</span><span>✓ HR hỗ trợ nhanh</span></div>
@@ -39,7 +39,7 @@ export function HeroSection(){
       </div>
       <div className="hero-note">Việc tốt<br/>Thu nhập ổn định<br/>Tương lai vững vàng</div>
       <div className="hero-trust" aria-label="Điểm nổi bật">
-        <div><b>6+</b><span>Công ty uy tín</span></div>
+        <div><b>7+</b><span>Công ty uy tín</span></div>
         <div><b>100+</b><span>Vị trí đang tuyển</span></div>
         <div><b>HR</b><span>Hỗ trợ Zalo & điện thoại</span></div>
       </div>
