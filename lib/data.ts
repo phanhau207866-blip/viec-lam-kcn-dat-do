@@ -120,6 +120,42 @@ export const jobs: Job[] = [
     image: "/media/an-an.jpg"
   },
   {
+    slug: "idc-fluid-chinh-thuc",
+    company: "IDC Fluid – Nhân viên chính thức",
+    title: "Gia công · Trợ lý tiếng Trung · Rèn dập",
+    category: "Kim loại · Van nước bằng đồng",
+    location: "KCN Đất Đỏ",
+    age: "Theo yêu cầu vị trí",
+    gender: "Nam / Nữ",
+    hiring: "Đang tuyển chính thức",
+    shifts: "Gia công xoay ca: 1 tuần ngày / 1 tuần đêm",
+    pay: [
+      "Nhân viên gia công – thử việc 1 tháng: 6.850.000đ + tăng ca + sản lượng",
+      "Nhân viên gia công – chính thức: 7.760.000đ + tăng ca + sản lượng + phụ cấp",
+      "Gia công ca đêm: tính 2 chấm + thêm 50.000đ/ngày ca đêm",
+      "Trợ lý bộ phận gia công: lương thỏa thuận trực tiếp khi phỏng vấn",
+      "Nhân viên rèn dập – thử việc 1 tháng: 6.850.000đ + tăng ca + sản lượng + phụ cấp nóng 30.000đ/ngày",
+      "Nhân viên rèn dập – chính thức: 8.650.000đ + tăng ca + sản lượng + phụ cấp",
+      "Rèn dập ca đêm: tính 2 chấm + phụ cấp nóng 30.000đ/ngày"
+    ],
+    benefits: [
+      "Phụ cấp chuyên cần: 300.000đ",
+      "Phụ cấp xăng xe: 150.000đ",
+      "Phụ cấp nhà trọ: 500.000đ",
+      "Có tăng ca và thưởng sản lượng theo vị trí"
+    ],
+    requirements: [
+      "Nhân viên gia công: Nam/Nữ, có thể xoay ca",
+      "Trợ lý bộ phận gia công: bắt buộc giao tiếp tiếng Trung tốt",
+      "Trợ lý: biết sử dụng máy tính và tin học văn phòng"
+    ],
+    contactName: "Hậu",
+    contactPhone: "0868660068",
+    badge: "Nhân viên chính thức",
+    summary: "IDC Fluid tuyển nhân viên chính thức cho 3 nhóm vị trí: nhân viên gia công, trợ lý bộ phận gia công và nhân viên rèn dập. Công ty sản xuất van nước bằng đồng tại KCN Đất Đỏ.",
+    image: "/media/idc-fluid.jpg"
+  },
+  {
     slug: "hai-au",
     company: "Hải Âu",
     title: "Mài, xi mạ, đúc kim loại, phun sơn & kho",
