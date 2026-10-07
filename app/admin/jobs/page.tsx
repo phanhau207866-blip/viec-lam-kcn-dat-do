@@ -3,7 +3,8 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { getSupabase } from "@/lib/supabase";
-import type { JobRow } from "@/lib/job-db";
+import { jobs as fallbackJobs } from "@/lib/data";
+import { jobToRow, type JobRow } from "@/lib/job-db";
 import { HomeHeroAdmin } from "@/components/HomeHeroAdmin";
 
 const blank: JobRow = {
@@ -33,7 +34,12 @@ export default function JobsAdmin(){
     setAuth(true);
     const {data,error}=await s.from("jobs").select("*").order("created_at",{ascending:true});
     if(error) setMsg(`Lỗi tải tin: ${error.message}`);
-    setRows((data||[]) as JobRow[]);setLoading(false);
+    const dbRows=(data||[]) as JobRow[];
+    const dbSlugs=new Set(dbRows.map(r=>r.slug));
+    const fallbackRows=fallbackJobs
+      .filter(j=>!dbSlugs.has(j.slug))
+      .map(j=>jobToRow(j));
+    setRows([...dbRows,...fallbackRows]);setLoading(false);
   }
   useEffect(()=>{load();},[]);
 
@@ -98,7 +104,7 @@ export default function JobsAdmin(){
     <div className="job-admin-list">{visible.map(r=><article className="job-admin-card" key={String(r.id||r.slug)}>
       <div className="job-admin-summary">
         <div className="job-admin-mini-media">{r.logo_url?<img src={r.logo_url} alt=""/>:<span>{r.company_name.slice(0,3).toUpperCase()}</span>}</div>
-        <div><div className="job-admin-title"><strong>{r.company_name}</strong>{r.is_urgent&&<span className="urgent-pill">Tuyển gấp</span>}{!r.is_active&&<span className="off-pill">Đang ẩn</span>}</div><p>{r.job_title}</p><small>📍 {r.location} · HR {r.hr_name} · {r.hr_phone}</small>{r.updated_at&&<small className="updated-note">Cập nhật: {new Date(r.updated_at).toLocaleString("vi-VN")}</small>}</div>
+        <div><div className="job-admin-title"><strong>{r.company_name}</strong>{r.is_urgent&&<span className="urgent-pill">Tuyển gấp</span>}{!r.id&&<span className="off-pill">Chưa lưu DB</span>}{!r.is_active&&<span className="off-pill">Đang ẩn</span>}</div><p>{r.job_title}</p><small>📍 {r.location} · HR {r.hr_name} · {r.hr_phone}</small>{r.updated_at&&<small className="updated-note">Cập nhật: {new Date(r.updated_at).toLocaleString("vi-VN")}</small>}</div>
       </div>
       <div className="job-admin-actions"><button onClick={()=>setEditing({...r})}>Sửa</button><button onClick={()=>duplicate(r)}>Nhân bản</button><button onClick={()=>toggle(r,"is_active")}>{r.is_active?"Ẩn tin":"Hiện tin"}</button><button onClick={()=>toggle(r,"is_urgent")}>{r.is_urgent?"Bỏ tuyển gấp":"Đánh dấu tuyển gấp"}</button><button className="danger" onClick={()=>remove(r)}>Xóa</button></div>
     </article>)}</div>
