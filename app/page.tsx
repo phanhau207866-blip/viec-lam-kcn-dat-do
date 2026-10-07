@@ -13,7 +13,7 @@ export default function Home() {
         <HeroSection />
 
         <section id="viec-dang-tuyen" className="jobs-section wide-container">
-          <div className="section-head final-head"><div><span className="eyebrow">VIỆC MỚI TẠI KCN ĐẤT ĐỎ</span><h2>7 công ty đang tuyển</h2></div><p>Chọn công việc phù hợp, xem chi tiết rồi ứng tuyển ngay.</p></div>
+          <div className="section-head final-head"><div><span className="eyebrow">VIỆC MỚI TẠI KCN ĐẤT ĐỎ</span><h2>8 tin tuyển dụng</h2></div><p>Chọn công việc phù hợp, xem chi tiết rồi ứng tuyển ngay.</p></div>
           <JobExplorer />
         </section>
 

@@ -62,6 +62,41 @@ export const jobs: Job[] = [
     logo: "/logos/dnp.png"
   },
   {
+    slug: "dnp-chinh-thuc",
+    company: "DNP – Nhân viên chính thức",
+    title: "Admin kho · Nhân viên bảo trì",
+    category: "Kho vận · Kỹ thuật bao bì mềm",
+    location: "KCN Đất Đỏ",
+    age: "Liên hệ HR",
+    gender: "Liên hệ HR",
+    hiring: "Đang tuyển chính thức",
+    shifts: "Thứ 2–Thứ 7: hành chính 7h30–16h30 hoặc bảo trì xoay ca 8 tiếng",
+    pay: [
+      "Bảo trì: thu nhập 11–15 triệu/tháng khi xoay ca; 9–11 triệu/tháng khi làm hành chính",
+      "Bảo trì xoay ca: 06h00–14h00 / 14h00–22h00 / 22h00–06h00",
+      "Bảo trì hành chính: 7h30–16h30, Thứ 2–Thứ 7",
+      "Admin kho: giờ hành chính 7h30–16h30, Thứ 2–Thứ 7; thường xuyên tăng ca ngoài giờ",
+      "Admin kho: liên hệ HR để biết mức lương"
+    ],
+    benefits: [
+      "Bảo trì: chưa có kinh nghiệm được đào tạo",
+      "SĐT hỗ trợ thêm: 0868 660 068"
+    ],
+    requirements: [
+      "Admin kho: ít nhất 6 tháng kinh nghiệm trong môi trường sản xuất",
+      "Admin kho: thành thạo Excel / tin học văn phòng, có thể thường xuyên tăng ca ngoài giờ",
+      "Bảo trì: tốt nghiệp Trung cấp Điện công nghiệp / Cơ điện tử / Tự động hóa",
+      "Bảo trì: ưu tiên có kinh nghiệm; chưa có kinh nghiệm được đào tạo",
+      "Bảo trì: làm việc độc lập và phối hợp với các bộ phận liên quan"
+    ],
+    contactName: "HR DNP",
+    contactPhone: "0839531388",
+    badge: "Nhân viên chính thức",
+    summary: "DNP tuyển chính thức 2 vị trí. Admin kho – Kho vận: cập nhật nhập/xuất/tồn trên Bravo, đối chiếu số liệu, lập lệnh và phiếu xuất kho, phối hợp thủ kho/phụ kho và các bộ phận theo dõi đơn hàng, tổng hợp báo cáo và lưu trữ chứng từ. Nhân viên bảo trì – Kỹ thuật Bao bì mềm: bảo dưỡng định kỳ, vệ sinh 5S, sửa chữa máy móc, cải tiến hiệu suất, thi công/lắp đặt điện–khí–nước cho sản xuất, quản lý dụng cụ và kiểm soát vật tư thay thế. Zalo / Gọi HR: 0839 531 388. Hỗ trợ thêm: 0868 660 068.",
+    image: "/media/dnp.jpg",
+    logo: "/logos/dnp.png"
+  },
+  {
     slug: "dongjin",
     company: "Dongjin",
     title: "Lắp ráp mô tơ, dây điện & linh kiện ô tô",

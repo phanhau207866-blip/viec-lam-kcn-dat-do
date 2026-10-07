@@ -48,7 +48,7 @@ export function rowToJob(row: JobRow): Job {
     badge: row.is_urgent ? "Tuyển gấp" : "Đang tuyển",
     summary: row.description || "Liên hệ HR để được tư vấn chi tiết công việc.",
     image: row.image_url || "/media/hero-workers-clean.jpg",
-    logo: row.logo_url || ({ dnp: "/logos/dnp.png", dongjin: "/logos/dongjin.png", "hai-au": "/logos/hai-au.png" } as Record<string,string>)[row.slug]
+    logo: row.logo_url || ({ dnp: "/logos/dnp.png", "dnp-chinh-thuc": "/logos/dnp.png", dongjin: "/logos/dongjin.png", "hai-au": "/logos/hai-au.png" } as Record<string,string>)[row.slug]
   };
 }
 
