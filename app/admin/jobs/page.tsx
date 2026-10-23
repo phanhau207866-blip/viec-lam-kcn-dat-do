@@ -9,7 +9,7 @@ import { HomeHeroAdmin } from "@/components/HomeHeroAdmin";
 
 const blank: JobRow = {
   company_name: "", slug: "", location: "KCN Đất Đỏ", job_title: "", salary: "", shift: "", age_requirement: "", gender_requirement: "Nam / Nữ",
-  description: "", requirements: "", benefits: "", hr_name: "", hr_phone: "", hr_zalo: "", image_url: "/media/hero-workers-clean.jpg", logo_url: null,
+  description: "", requirements: "", benefits: "", hr_name: "Hậu", hr_phone: "0868660068", hr_zalo: "0868660068", image_url: "/media/hero-workers-clean.jpg", logo_url: null,
   is_active: true, is_urgent: false
 };
 
@@ -34,7 +34,7 @@ export default function JobsAdmin(){
     setAuth(true);
     const {data,error}=await s.from("jobs").select("*").order("created_at",{ascending:true});
     if(error) setMsg(`Lỗi tải tin: ${error.message}`);
-    let dbRows=(data||[]) as JobRow[];
+    let dbRows=((data||[]) as JobRow[]).map(r=>({...r,hr_name:"Hậu",hr_phone:"0868660068",hr_zalo:"0868660068"}));
     const dbSlugs=new Set(dbRows.map(r=>r.slug));
     const fallbackRows=fallbackJobs
       .filter(j=>!dbSlugs.has(j.slug))
@@ -61,7 +61,7 @@ export default function JobsAdmin(){
     const finalSlug=editing.slug.trim() || slugify(editing.company_name);
     if(!finalSlug){setMsg("Vui lòng nhập slug / đường dẫn");return;}
     setMsg("Đang lưu...");
-    const payload={...editing,slug:finalSlug,updated_at:new Date().toISOString()};
+    const payload={...editing,slug:finalSlug,hr_name:"Hậu",hr_phone:"0868660068",hr_zalo:"0868660068",updated_at:new Date().toISOString()};
     let result;
     if(editing.id) result=await s.from("jobs").update(payload).eq("id",editing.id).select().single();
     else { const {id,...insertPayload}=payload as any; result=await s.from("jobs").insert(insertPayload).select().single(); }
@@ -116,7 +116,7 @@ export default function JobsAdmin(){
         <div className="job-admin-mini-media">{r.logo_url?<img src={r.logo_url} alt=""/>:<span>{r.company_name.slice(0,3).toUpperCase()}</span>}</div>
         <div><div className="job-admin-title"><strong>{r.company_name}</strong>{r.is_urgent&&<span className="urgent-pill">Tuyển gấp</span>}{!r.id&&<span className="off-pill">Chưa lưu DB</span>}{!r.is_active&&<span className="off-pill">Đang ẩn</span>}</div><p>{r.job_title}</p><small>📍 {r.location} · HR {r.hr_name} · {r.hr_phone}</small>{r.updated_at&&<small className="updated-note">Cập nhật: {new Date(r.updated_at).toLocaleString("vi-VN")}</small>}</div>
       </div>
-      <div className="job-admin-actions"><button onClick={()=>setEditing({...r})}>Sửa</button><button onClick={()=>duplicate(r)}>Nhân bản</button><button onClick={()=>toggle(r,"is_active")}>{r.is_active?"Ẩn tin":"Hiện tin"}</button><button onClick={()=>toggle(r,"is_urgent")}>{r.is_urgent?"Bỏ tuyển gấp":"Đánh dấu tuyển gấp"}</button><button className="danger" onClick={()=>remove(r)}>Xóa</button></div>
+      <div className="job-admin-actions"><button onClick={()=>setEditing({...r,hr_name:"Hậu",hr_phone:"0868660068",hr_zalo:"0868660068"})}>Sửa</button><button onClick={()=>duplicate(r)}>Nhân bản</button><button onClick={()=>toggle(r,"is_active")}>{r.is_active?"Ẩn tin":"Hiện tin"}</button><button onClick={()=>toggle(r,"is_urgent")}>{r.is_urgent?"Bỏ tuyển gấp":"Đánh dấu tuyển gấp"}</button><button className="danger" onClick={()=>remove(r)}>Xóa</button></div>
     </article>)}</div>
 
     {editing&&<div className="modal-backdrop" onClick={()=>setEditing(null)}><div className="job-editor" onClick={e=>e.stopPropagation()}>
