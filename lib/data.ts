@@ -80,7 +80,7 @@ export const jobs: Job[] = [
     ],
     benefits: [
       "Bảo trì: chưa có kinh nghiệm được đào tạo",
-      "SĐT hỗ trợ thêm: 0868 660 068"
+      "Liên hệ Hậu: 0868 660 068"
     ],
     requirements: [
       "Admin kho: ít nhất 6 tháng kinh nghiệm trong môi trường sản xuất",
@@ -89,10 +89,10 @@ export const jobs: Job[] = [
       "Bảo trì: ưu tiên có kinh nghiệm; chưa có kinh nghiệm được đào tạo",
       "Bảo trì: làm việc độc lập và phối hợp với các bộ phận liên quan"
     ],
-    contactName: "HR DNP",
-    contactPhone: "0839531388",
+    contactName: "Hậu",
+    contactPhone: "0868660068",
     badge: "Nhân viên chính thức",
-    summary: "DNP tuyển chính thức 2 vị trí. Admin kho – Kho vận: cập nhật nhập/xuất/tồn trên Bravo, đối chiếu số liệu, lập lệnh và phiếu xuất kho, phối hợp thủ kho/phụ kho và các bộ phận theo dõi đơn hàng, tổng hợp báo cáo và lưu trữ chứng từ. Nhân viên bảo trì – Kỹ thuật Bao bì mềm: bảo dưỡng định kỳ, vệ sinh 5S, sửa chữa máy móc, cải tiến hiệu suất, thi công/lắp đặt điện–khí–nước cho sản xuất, quản lý dụng cụ và kiểm soát vật tư thay thế. Zalo / Gọi HR: 0839 531 388. Hỗ trợ thêm: 0868 660 068.",
+    summary: "DNP tuyển chính thức 2 vị trí. Admin kho – Kho vận: cập nhật nhập/xuất/tồn trên Bravo, đối chiếu số liệu, lập lệnh và phiếu xuất kho, phối hợp thủ kho/phụ kho và các bộ phận theo dõi đơn hàng, tổng hợp báo cáo và lưu trữ chứng từ. Nhân viên bảo trì – Kỹ thuật Bao bì mềm: bảo dưỡng định kỳ, vệ sinh 5S, sửa chữa máy móc, cải tiến hiệu suất, thi công/lắp đặt điện–khí–nước cho sản xuất, quản lý dụng cụ và kiểm soát vật tư thay thế. Zalo / Gọi Hậu: 0868 660 068.",
     image: "/media/dnp.jpg",
     logo: "/logos/dnp.png"
   },
@@ -109,8 +109,8 @@ export const jobs: Job[] = [
     pay: ["8h ngày: 251.500đ", "12h ngày: 377.700đ", "8h đêm: 301.500đ", "Tăng ca khoảng 35.000–61.000đ/giờ"],
     benefits: ["Chuyên cần 300.000đ/26 công", "Năng suất + đứng máy: 200.000–1.000.000đ", "BHXH, BHYT, BHTN"],
     requirements: ["Có thể làm việc trong môi trường sản xuất công nghiệp"],
-    contactName: "Kim Anh",
-    contactPhone: "0334677276",
+    contactName: "Hậu",
+    contactPhone: "0868660068",
     badge: "Từ 16 tuổi",
     summary: "Sản xuất mô tơ tản nhiệt ô tô, động cơ làm mát, motor DC công nghiệp; dây điện ô tô (wire harness), máy đề, máy phát điện và phụ kiện động cơ.",
     image: "/media/dongjin.jpg",
@@ -129,8 +129,8 @@ export const jobs: Job[] = [
     pay: ["8h ngày: 251.500đ", "12h ngày: 377.700đ", "8h đêm: 301.500đ", "Tăng ca khoảng 35.000–61.000đ/giờ"],
     benefits: ["Có tăng ca", "Thu nhập tăng theo số giờ làm"],
     requirements: ["CCCD bản gốc", "Phỏng vấn đạt có thể đi làm ngay"],
-    contactName: "Ms Hoa",
-    contactPhone: "0886935805",
+    contactName: "Hậu",
+    contactPhone: "0868660068",
     badge: "Đi làm nhanh",
     summary: "Sản xuất dây điện ô tô (wire harness), mô tơ tản nhiệt, động cơ làm mát, motor DC công nghiệp, máy đề, máy phát điện và các phụ kiện liên quan.",
     image: "/media/djm-solution.jpg"
@@ -148,8 +148,8 @@ export const jobs: Job[] = [
     pay: ["Ca ngày: 430.000đ", "Ca đêm: 490.000đ", "Chuyên cần: 260.000đ"],
     benefits: ["BHXH theo quy định", "Công việc ổn định"],
     requirements: ["CCCD bản gốc hoặc VNeID"],
-    contactName: "Ms Hoa",
-    contactPhone: "0886935805",
+    contactName: "Hậu",
+    contactPhone: "0868660068",
     badge: "Ca 12 tiếng",
     summary: "Sản xuất da nhân tạo trong nhà máy, làm việc với các cuộn vật liệu và công đoạn sản xuất theo dây chuyền. Có ca ngày và ca đêm.",
     image: "/media/an-an.jpg"
@@ -203,8 +203,8 @@ export const jobs: Job[] = [
     pay: ["Thử việc: 6.730.000đ", "Chính thức: 7.700.000đ", "Thợ tay nghề ≥1 năm: 8.400.000đ", "Có thêm các khoản phụ cấp khác"],
     benefits: ["Hỗ trợ cơm ca", "BHXH, BHYT", "Thưởng lễ, Tết", "Lương hàng tháng đúng hạn"],
     requirements: ["CCCD + hồ sơ", "Không cần kinh nghiệm, được đào tạo"],
-    contactName: "Trang",
-    contactPhone: "0939296153",
+    contactName: "Hậu",
+    contactPhone: "0868660068",
     badge: "Được đào tạo",
     summary: "Gia công nội thất vòi inox và các bộ phận mài kẽm/mài đồng, xi mạ kẽm/xi mạ đồng, đúc kim loại, phun sơn, gia công và kho.",
     image: "/media/hai-au.jpg",
